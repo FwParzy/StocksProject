@@ -22,18 +22,22 @@ public class Stocks {
     this.profit = profit - (buyPrice * qty);
   }
 
+    String a = Double.toString(this.buyPrice);
+    String b = Double.toString(this.qty);
+    String c = Double.toString(this.profit);
   // Getters
-  public double getStock() {
+  // TODO FIX THIS BECAUSE ITS BROKEN
+  public String getStock() {
     return this.name;
     return this.abbr;
-    return this.buyPrice;
-    return this.qty;
-    return this.profit;
+    return this.a;
+    return this.b;
+    return this.c;
   }
-  public double getStockName() {
+  public String getStockName() {
     return this.name;
   }
-  public double getStockAbbr() {
+  public String getStockAbbr() {
     return this.abbr;
   }
   public double getStockBuyPrice() {
@@ -48,17 +52,19 @@ public class Stocks {
 
   // Set Qty and get profits
   // TODO THIS IS A WORK IN PROGRESS AND SUBJECT TO CHANGE
-  public void setQty(String qty) {
-    // Ask for selling qty
-    // Ask for selling buyPrice
+  public void setQty(double qty, double sellPrice) {
     // Calculate profits
+    // Old quantity
     double temp = this.qty;
-    this.qty = qty;
-    double sum = this.temp - qty;
-    if (sum >= 0) {
-      profit = (sum * buyPrice);
+    double soldQty = qty;
+    // Calculate the new ammount
+    this.qty = temp - soldQty;
+    if (this.qty >= 0) {
+      this.profit = (this.qty * sellPrice) - (this.qty * buyPrice);
+      System.out.println("You have this much profit so far: " + profit);
     } else {
       System.out.println("setQty Err: 0");
+      System.exit(0);
     }
   }
 }

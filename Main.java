@@ -1,6 +1,4 @@
-import java.util.Scanner;
-
-public class Stonks {
+public class Main {
   public static void main(String[] args) {
 
     // Calling the login class and logging in
@@ -8,5 +6,7 @@ public class Stonks {
     user.login();
 
     System.out.println("We be doing things");
+
+
   }
 }
