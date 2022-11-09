@@ -1,21 +1,18 @@
 public class Stocks {
 
-  private String company;
   private String material;
   private double buyPrice;
   private double qty;
   private double profit;
 
   public Stocks() {
-    this.company = "Default Company";
     this.material = "Default material";
     this.buyPrice = 20;
     this.qty = 1;
     this.profit = profit - (buyPrice * qty);
   }
 
-  public Stocks(String company, String material, double buyPrice, double qty) {
-    this.company = company;
+  public Stocks(String material, double buyPrice, double qty) {
     this.material = material;
     this.buyPrice = buyPrice;
     this.qty = qty;
@@ -23,9 +20,6 @@ public class Stocks {
   }
 
   // Getters
-  public String getStockCompany() {
-    return this.company;
-  }
   public String getStockMaterial() {
     return this.material;
   }
