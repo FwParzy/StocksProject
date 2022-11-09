@@ -1,44 +1,33 @@
 public class Stocks {
 
-  private String name;
-  private String abbr;
+  private String company;
+  private String material;
   private double buyPrice;
   private double qty;
   private double profit;
 
   public Stocks() {
-    this.name = "Default Stock";
-    this.abbr = "DFS";
+    this.company = "Default Company";
+    this.material = "Default material";
     this.buyPrice = 20;
     this.qty = 1;
     this.profit = profit - (buyPrice * qty);
   }
 
-  public Stocks(String name, String abbr, double buyPrice, double qty) {
-    this.name = name;
-    this.abbr = abbr;
+  public Stocks(String company, String material, double buyPrice, double qty) {
+    this.company = company;
+    this.material = material;
     this.buyPrice = buyPrice;
     this.qty = qty;
     this.profit = profit - (buyPrice * qty);
   }
 
-    String a = Double.toString(this.buyPrice);
-    String b = Double.toString(this.qty);
-    String c = Double.toString(this.profit);
   // Getters
-  // TODO FIX THIS BECAUSE ITS BROKEN
-  public String getStock() {
-    return this.name;
-    return this.abbr;
-    return this.a;
-    return this.b;
-    return this.c;
+  public String getStockCompany() {
+    return this.company;
   }
-  public String getStockName() {
-    return this.name;
-  }
-  public String getStockAbbr() {
-    return this.abbr;
+  public String getStockMaterial() {
+    return this.material;
   }
   public double getStockBuyPrice() {
     return this.buyPrice;
