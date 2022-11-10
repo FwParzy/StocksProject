@@ -32,6 +32,12 @@ public class Stocks {
   public double getStockProfit() {
     return this.profit;
   }
+  public void display(){
+      System.out.println("Material:  "+this.material);
+      System.out.println("Buy Price: "+this.buyPrice);
+      System.out.println("Quantity:  "+this.qty);
+      System.out.println("Profit:    "+this.profit);
+   }
 
   // Set Qty and get profits
   // TODO THIS IS A WORK IN PROGRESS AND SUBJECT TO CHANGE
