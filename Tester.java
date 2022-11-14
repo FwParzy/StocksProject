@@ -24,10 +24,7 @@ public class Tester {
       } else if (answer.equals("stocks")) {
 
         Stocks inventory[] = new Stocks[256];
-        // Autogenerate stock
-        // inventory[0] = new Stocks();
-        // inventory[0].display();
-
+        
         // Get user input for different stock
         System.out.println("Please enter the following for your stock purchase: ");
         System.out.print("Stock Material:           ");
