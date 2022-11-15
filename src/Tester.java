@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Tester {
 
@@ -49,6 +50,26 @@ public class Tester {
 
         System.out.println("You added this to our inventory");
         inventory.get(last).display();
+
+        for (int i=0; i<inventory.size(); i++) {
+          inventory.get(i).display();
+        }
+      // display all of the arraylist with numbers beside them TODO
+        System.out.println("What do you want to change?");
+        int ind = scan.nextInt();
+
+        System.out.println("How many do you actually have");
+        qty = scan.nextDouble();
+
+        System.out.println("For How much?");
+        double sellPrice = scan.nextDouble();
+
+        inventory.get(ind).sellQty(qty, sellPrice);
+
+        for (int i=0; i<inventory.size(); i++) {
+          inventory.get(i).display();
+        }
+
         answer = "";
 
       } else if (answer.equals("customer")) {
