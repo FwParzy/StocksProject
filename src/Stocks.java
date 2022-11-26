@@ -41,7 +41,6 @@ public class Stocks {
     System.out.println("Buy Price: " + this.buyPrice);
     System.out.println("Quantity:  " + this.qty);
     System.out.println("Profit:    " + this.profit);
-    System.out.println();
   }
 
   // Setters
@@ -72,7 +71,7 @@ public class Stocks {
     this.qty = temp - soldQty;
     // If remaining quantity greater than or = to 0
     if (this.qty >= 0) {
-      this.profit = (this.qty * sellPrice) - (this.qty * buyPrice);
+      this.profit = this.profit + (soldQty * sellPrice);
       System.out.println("You have this much profit so far: " + profit);
     } else {
       System.out.println("You cant do that. Please dont try to sell more than you own");

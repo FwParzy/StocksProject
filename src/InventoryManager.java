@@ -15,49 +15,51 @@ public class InventoryManager {
 
   public void displayInventory() {
     for (int i = 0; i < inventory.size(); i++) {
-      System.out.println(i);
+      System.out.println("\n" + i);
       inventory.get(i).display();
     }
   }
 
   public void addInventory() {
-    System.out.println("Please enter the following for your stock purchase: ");
-    System.out.print("Stock Material:           ");
+    System.out.println("\nPlease enter the following for your stock purchase: ");
+    System.out.print("\nStock Material:           ");
     String material = in.next();
 
-    System.out.print("Stock price bought at:    ");
+    System.out.print("\nStock price bought at:    ");
     double buyPrice = in.nextDouble();
 
-    System.out.print("Stock quantity bought:    ");
+    System.out.print("\nStock quantity bought:    ");
     double qty = in.nextDouble();
 
     // Create user inputed stock
     inventory.add(new Stocks(material, buyPrice, qty));
     int last = inventory.size() - 1;
 
-    System.out.println("You added this to our inventory");
+    System.out.println("\nYou added this to our inventory");
     inventory.get(last).display();
   }
 
   public void sellInventory() {
+    displayInventory();
     System.out.println("What do you want to sell?");
     int ind = in.nextInt();
 
-    System.out.println("How many did you sell?");
+    System.out.println("\nHow many did you sell?");
     double qty = in.nextDouble();
 
-    System.out.println("How much did you sell for?");
+    System.out.println("\nHow much did you sell for?");
     double sellPrice = in.nextDouble();
 
     inventory.get(ind).sellQty(qty, sellPrice);
+    inventory.get(ind).display();
   }
 
   public void runInputCheck() {
-    System.out.println("What would you like to do with your Inventory?");
+    System.out.println("\nWhat would you like to do with your Inventory?");
     String input = "";
 
     while (!input.equals("back")) {
-      System.out.println("display, add, sell, back");
+      System.out.println("\ndisplay, add, sell, back\n");
       input = in.next();
       if (input.equals("display")) {
         displayInventory();

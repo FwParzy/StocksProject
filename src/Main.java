@@ -12,18 +12,17 @@ public class Main {
     // Calling the login class and logging in
     user.login();
 
-    System.out.println("Welcome to foo Inventory Management program");
+    System.out.println("\nWelcome to foo Inventory Management program");
 
     while (!answer.equals("quit")) {
-      System.out.println();
-      System.out.println("What would you like to manage?");
+      System.out.println("\nWhat would you like to manage?");
       System.out.println("Inventory, Customers, Dispatch, Shift, quit");
       answer = in.next();
 
       if (answer.equals("Inventory")) {
         inventory.runInputCheck();
 
-      } else if (answer.equals("Customer")) {
+      } else if (answer.equals("Customers")) {
         customers.runInputCheck();
 
       } else if (answer.equals("Dispatch")) {
@@ -36,6 +35,6 @@ public class Main {
         System.out.println("something broke");
       }
     }
-    System.out.println("Thanks for using foo Inventory Management");
+    System.out.println("\nThanks for using foo Inventory Management");
   }
 }
