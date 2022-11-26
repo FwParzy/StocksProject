@@ -6,9 +6,7 @@ public class Customer {
   private double price;
   private double totalPrice;
 
-  public Customer() {
-
-  }
+  public Customer() {}
 
   public Customer(String name, String material, double amount, double price) {
     this.name = name;
@@ -53,11 +51,11 @@ public class Customer {
     return price * amount;
   }
 
-  public void display(){
-    System.out.println("Customer:  "+this.name);
-    System.out.println("Material:  "+this.material);
-    System.out.println("Buy Price: "+this.price);
-    System.out.println("Quantity:  "+this.amount);
+  public void display() {
+    System.out.println("Customer:  " + this.name);
+    System.out.println("Material:  " + this.material);
+    System.out.println("Buy Price: " + this.price);
+    System.out.println("Quantity:  " + this.amount);
     System.out.println();
   }
 }

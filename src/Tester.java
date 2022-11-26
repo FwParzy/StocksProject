@@ -1,6 +1,5 @@
-import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class Tester {
 
@@ -14,8 +13,8 @@ public class Tester {
       System.out.println("What would you like to test?");
       System.out.println("login, stocks, customer, delete, quit ...");
       String answer = scan.next();
-      
-      //Inventory initialization
+
+      // Inventory initialization
       ArrayList<Stocks> inventory = new ArrayList<Stocks>();
       inventory.add(new Stocks("wood", 10, 11));
       inventory.add(new Stocks("Steel", 10, 11));
@@ -32,7 +31,7 @@ public class Tester {
         answer = "";
 
       } else if (answer.equals("stocks")) {
-        
+
         // Get user input for different stock
         System.out.println("Please enter the following for your stock purchase: ");
         System.out.print("Stock Material:           ");
@@ -51,10 +50,10 @@ public class Tester {
         System.out.println("You added this to our inventory");
         inventory.get(last).display();
 
-        for (int i=0; i<inventory.size(); i++) {
+        for (int i = 0; i < inventory.size(); i++) {
           inventory.get(i).display();
         }
-      // display all of the arraylist with numbers beside them TODO
+        // display all of the arraylist with numbers beside them TODO
         System.out.println("What do you want to change?");
         int ind = scan.nextInt();
 
@@ -66,14 +65,14 @@ public class Tester {
 
         inventory.get(ind).sellQty(qty, sellPrice);
 
-        for (int i=0; i<inventory.size(); i++) {
+        for (int i = 0; i < inventory.size(); i++) {
           inventory.get(i).display();
         }
 
         answer = "";
 
       } else if (answer.equals("customer")) {
-        
+
         Customer customer1 = new Customer();
 
         Scanner in = new Scanner(System.in);
@@ -90,7 +89,18 @@ public class Tester {
         System.out.println("Price per unit will be: ");
         customer1.setPrice(in.nextDouble());
 
-        System.out.println("Name: " + customer1.getName() + "  " + "Material: " + customer1.getMaterial() + "  " + "Units to purchase: " + customer1.getAmount() + "  " + "The price in dollars will be: " + customer1.getTotalPrice());
+        System.out.println(
+            "Name: "
+                + customer1.getName()
+                + "  "
+                + "Material: "
+                + customer1.getMaterial()
+                + "  "
+                + "Units to purchase: "
+                + customer1.getAmount()
+                + "  "
+                + "The price in dollars will be: "
+                + customer1.getTotalPrice());
 
         answer = "";
 
@@ -105,7 +115,6 @@ public class Tester {
       } else if (answer.equals("quit")) {
         stop = true;
       }
-
     }
   }
 }

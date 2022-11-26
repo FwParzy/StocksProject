@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Main {
   public static void main(String[] args) {
@@ -15,24 +14,27 @@ public class Main {
 
     System.out.println("Welcome to foo Inventory Management program");
 
-
     while (!answer.equals("quit")) {
       System.out.println();
       System.out.println("What would you like to manage?");
-      System.out.println("Inventory, Customers, TBA, quit");
+      System.out.println("Inventory, Customers, Dispatch, Shift, quit");
       answer = in.next();
 
-      if (answer.equals("inventory")) {
+      if (answer.equals("Inventory")) {
         inventory.runInputCheck();
 
-      } else if (answer.equals("customer") ) {
+      } else if (answer.equals("Customer")) {
         customers.runInputCheck();
-        
-      }
-      else {
+
+      } else if (answer.equals("Dispatch")) {
+        DispatchTester.main(args);
+
+      } else if (answer.equals("Shift")) {
+        ShiftingTester.main(args);
+
+      } else {
         System.out.println("something broke");
       }
-
     }
     System.out.println("Thanks for using foo Inventory Management");
   }

@@ -1,11 +1,10 @@
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class InventoryManager {
- 
-    Scanner in = new Scanner(System.in);
-    ArrayList<Stocks> inventory = new ArrayList<Stocks>();
-  
+
+  Scanner in = new Scanner(System.in);
+  ArrayList<Stocks> inventory = new ArrayList<Stocks>();
 
   public InventoryManager() {
     inventory.add(new Stocks("wood", 10, 11));
@@ -15,7 +14,7 @@ public class InventoryManager {
   }
 
   public void displayInventory() {
-    for (int i=0; i<inventory.size(); i++) {
+    for (int i = 0; i < inventory.size(); i++) {
       System.out.println(i);
       inventory.get(i).display();
     }
@@ -53,14 +52,13 @@ public class InventoryManager {
     inventory.get(ind).sellQty(qty, sellPrice);
   }
 
-
   public void runInputCheck() {
     System.out.println("What would you like to do with your Inventory?");
     String input = "";
 
     while (!input.equals("back")) {
-    System.out.println("display, add, sell, back");
-    input = in.next();
+      System.out.println("display, add, sell, back");
+      input = in.next();
       if (input.equals("display")) {
         displayInventory();
       } else if (input.equals("add")) {
@@ -70,5 +68,4 @@ public class InventoryManager {
       }
     }
   }
-
 }

@@ -23,20 +23,24 @@ public class Stocks {
   public String getStockMaterial() {
     return this.material;
   }
+
   public double getStockBuyPrice() {
     return this.buyPrice;
   }
+
   public double getStockQty() {
     return this.qty;
   }
+
   public double getStockProfit() {
     return this.profit;
   }
-  public void display(){
-    System.out.println("Material:  "+this.material);
-    System.out.println("Buy Price: "+this.buyPrice);
-    System.out.println("Quantity:  "+this.qty);
-    System.out.println("Profit:    "+this.profit);
+
+  public void display() {
+    System.out.println("Material:  " + this.material);
+    System.out.println("Buy Price: " + this.buyPrice);
+    System.out.println("Quantity:  " + this.qty);
+    System.out.println("Profit:    " + this.profit);
     System.out.println();
   }
 
@@ -44,16 +48,20 @@ public class Stocks {
   public void setMaterial(String material) {
     this.material = material;
   }
+
   public void setBuyPrice(double buyPrice) {
     this.buyPrice = buyPrice;
   }
+
   public void setQty(double qty) {
     this.qty = qty;
   }
+
   public void setProfit(double profit) {
     this.profit = profit;
     System.out.println("The IRS is going to come after you");
   }
+
   public void sellQty(double qty, double sellPrice) {
     // Calculate profits
     // Old quantity
