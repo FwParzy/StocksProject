@@ -23,37 +23,44 @@ public class Stocks {
   public String getStockMaterial() {
     return this.material;
   }
+
   public double getStockBuyPrice() {
     return this.buyPrice;
   }
+
   public double getStockQty() {
     return this.qty;
   }
+
   public double getStockProfit() {
     return this.profit;
   }
-  public void display(){
-    System.out.println("Material:  "+this.material);
-    System.out.println("Buy Price: "+this.buyPrice);
-    System.out.println("Quantity:  "+this.qty);
-    System.out.println("Profit:    "+this.profit);
-    System.out.println();
+
+  public void display() {
+    System.out.println("Material:  " + this.material);
+    System.out.println("Buy Price: " + this.buyPrice);
+    System.out.println("Quantity:  " + this.qty);
+    System.out.println("Profit:    " + this.profit);
   }
 
   // Setters
   public void setMaterial(String material) {
     this.material = material;
   }
+
   public void setBuyPrice(double buyPrice) {
     this.buyPrice = buyPrice;
   }
+
   public void setQty(double qty) {
     this.qty = qty;
   }
+
   public void setProfit(double profit) {
     this.profit = profit;
     System.out.println("The IRS is going to come after you");
   }
+
   public void sellQty(double qty, double sellPrice) {
     // Calculate profits
     // Old quantity
@@ -64,7 +71,7 @@ public class Stocks {
     this.qty = temp - soldQty;
     // If remaining quantity greater than or = to 0
     if (this.qty >= 0) {
-      this.profit = (this.qty * sellPrice) - (this.qty * buyPrice);
+      this.profit = this.profit + (soldQty * sellPrice);
       System.out.println("You have this much profit so far: " + profit);
     } else {
       System.out.println("You cant do that. Please dont try to sell more than you own");

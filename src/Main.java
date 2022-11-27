@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Main {
   public static void main(String[] args) {
@@ -13,27 +12,29 @@ public class Main {
     // Calling the login class and logging in
     user.login();
 
-    System.out.println("Welcome to foo Inventory Management program");
-
+    System.out.println("\nWelcome to foo Inventory Management program");
 
     while (!answer.equals("quit")) {
-      System.out.println();
-      System.out.println("What would you like to manage?");
-      System.out.println("Inventory, Customers, TBA, quit");
+      System.out.println("\nWhat would you like to manage?");
+      System.out.println("Inventory, Customers, Dispatch, Shift, quit");
       answer = in.next();
 
-      if (answer.equals("inventory")) {
+      if (answer.equals("Inventory")) {
         inventory.runInputCheck();
 
-      } else if (answer.equals("customer") ) {
+      } else if (answer.equals("Customers")) {
         customers.runInputCheck();
-        
-      }
-      else {
+
+      } else if (answer.equals("Dispatch")) {
+        DispatchTester.main(args);
+
+      } else if (answer.equals("Shift")) {
+        ShiftingTester.main(args);
+
+      } else {
         System.out.println("something broke");
       }
-
     }
-    System.out.println("Thanks for using foo Inventory Management");
+    System.out.println("\nThanks for using foo Inventory Management");
   }
 }

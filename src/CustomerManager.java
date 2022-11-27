@@ -1,5 +1,5 @@
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CustomerManager {
 
@@ -9,12 +9,11 @@ public class CustomerManager {
   public CustomerManager() {
     customers.add(new Customer("bob", "wood", 5, 20));
     customers.add(new Customer("zaxbys", "Stone", 2, 30));
-
   }
 
   public void displayCustomers() {
     System.out.println();
-    for (int i=0; i<customers.size(); i++) {
+    for (int i = 0; i < customers.size(); i++) {
       System.out.println(i);
       customers.get(i).display();
     }
@@ -48,8 +47,8 @@ public class CustomerManager {
     String input = "";
 
     while (!input.equals("back")) {
-    System.out.println("display, add, back");
-    input = in.next();
+      System.out.println("display, add, back");
+      input = in.next();
       if (input.equals("display")) {
         displayCustomers();
       } else if (input.equals("add")) {
