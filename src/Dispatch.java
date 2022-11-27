@@ -2,56 +2,61 @@ public class Dispatch {
   // Dispatch variables
   private String status;
   private String date;
+  private String d;
+  private String r;
   private String location;
-  private String objective;
   private int scan;
   private String report;
 
   public Dispatch() {
-    status = "status not updated";
-    date = "N/A";
+    status = "N/A";
+    date = "Date: N/A";
     location = "N/A";
-    objective = "Location: " + this.location + "\nDate: " + this.date;
-    report = "" + status + "\n" + objective + "";
   }
 
-  public Dispatch(String status, String date, String location, String objective, int scan) {
+  public Dispatch(String status, String date, String location, int scan, String d, String r) {
     this.status = status;
     this.date = date;
     this.location = location;
-    this.objective = objective;
     this.scan = scan;
+    this.d = d;
+    this.r = r;
   }
 
   public void setStatus(String status) {
     this.status = status;
   }
 
-  public void setDate(String date) {
-    this.date = date;
+  public void setDate(String d, String r) {
+    this.d = d;
+    this.r = r;
+    date = "Departure: " + d + "\nReturn: " + r;
   }
 
   public void setLocation(String location) {
     this.location = location;
   }
 
-  public void setObjective(String location, String date) {
-    this.location = location;
-    this.date = date;
-  }
-
   public void scan(int scan) {
     this.scan = scan;
   }
 
-  public String getStatus() {
+  public void setReport(String status, String date, String location) {
+    this.status = status;
+    this.date = date;
+    this.location = location;
+  }
 
+  public String getStatus() {
     return status;
   }
 
-  public String getObjective() {
+  public String getDate() {
+    return date;
+  }
 
-    return objective;
+  public String getLocation() {
+    return location;
   }
 
   public int getScan() {
@@ -59,7 +64,7 @@ public class Dispatch {
   }
 
   public String getReport() {
-
+    report = "Status: " + this.status + "\n" + this.date + "\nLocation: " + this.location;
     return report;
   }
 }
