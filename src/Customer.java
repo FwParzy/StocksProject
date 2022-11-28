@@ -1,18 +1,15 @@
 public class Customer {
 
   private String name;
-  private double amount;
   private String material;
-  private double price;
-  private double totalPrice;
+  private double profit;
 
   public Customer() {}
 
-  public Customer(String name, String material, double amount, double price) {
+  public Customer(String name, String material, double profit) {
     this.name = name;
     this.material = material;
-    this.amount = amount;
-    this.price = price;
+    this.profit = profit;
   }
 
   public void setName(String name) {
@@ -31,31 +28,22 @@ public class Customer {
     return material;
   }
 
-  public void setAmount(double amount) {
-    this.amount = amount;
+  public void setProfit(double profit) {
+    this.profit = profit;
   }
 
-  public double getAmount() {
-    return amount;
+  public double getProfit() {
+    return profit;
   }
 
-  public void setPrice(double price) {
-    this.price = price;
-  }
-
-  public double getPrice() {
-    return price;
-  }
-
-  public double getTotalPrice() {
-    return price * amount;
+  public void calculateProfit(double newMoneys) {
+    profit = newMoneys + this.profit;
   }
 
   public void display() {
     System.out.println("Customer:  " + this.name);
     System.out.println("Material:  " + this.material);
-    System.out.println("Buy Price: " + this.price);
-    System.out.println("Quantity:  " + this.amount);
+    System.out.println("Profit:    " + this.profit);
     System.out.println();
   }
 }
