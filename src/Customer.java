@@ -40,6 +40,17 @@ public class Customer {
     profit = newMoneys + this.profit;
   }
 
+  public void getReceipt(
+      String name, String material, double totalPrice, double amount, double price) {
+    System.out.println("----------------------");
+    System.out.println("|Receipt|");
+    System.out.println("Name: " + name);
+    System.out.println("Materials     Quantity     Profit");
+    // System.out.printf(material + "%14s %12.2f \n", amount, price);
+    System.out.println("Total: " + totalPrice);
+    System.out.println("----------------------");
+  }
+
   public void display() {
     System.out.println("Customer:  " + this.name);
     System.out.println("Material:  " + this.material);
