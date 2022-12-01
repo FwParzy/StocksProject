@@ -10,9 +10,9 @@ public class ShiftingTester {
     String exit = "n";
 
     int[][] stock = {
-      {5, 5},
-      {5, 5},
-      {5, 5}
+        { 5, 5 },
+        { 5, 5 },
+        { 5, 5 }
     };
 
     while (exit.equals("n")) {
@@ -33,11 +33,7 @@ public class ShiftingTester {
       // front inventory
       if (input == 1) {
         System.out.println(
-            """
-                Front Inventory
-                (1)Wood (2)Steel (3)Concrete
-                Choose stock type:
-                """);
+            "Front Inventory \n 1: Wood \n  2: Steel \n 3: Concrete \n Choose stock type: ");
         int m = in.nextInt();
         if (m == 1) {
           System.out.println(

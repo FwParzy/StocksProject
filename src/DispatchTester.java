@@ -14,12 +14,12 @@ public class DispatchTester {
       // Dispatch Menu
       System.out.println(
           """
-                                                Dispatch Menu
+                                                    Dispatch Menu
 
-          1.Truck Status   |   2.Date   |   3.Location   |   4. View Report   |   5. Exit Dispatch Menu
+              1.Truck Status   |   2.Date   |   3.Location   |   4. View Report   |   5. Exit Dispatch Menu
 
-          Choose an area to update:
-          """);
+              Choose an area to update:
+              """);
 
       menu.scan(in.nextInt());
 
@@ -27,9 +27,9 @@ public class DispatchTester {
       if (menu.getScan() == 1) {
         System.out.println(
             """
-                              Truck Status
+                                  Truck Status
 
-            1. Here        2. Gone       3. Exit Dispatch Menu""");
+                1. Here        2. Gone       3. Exit Dispatch Menu""");
 
         menu.scan(in.nextInt());
         if (menu.getScan() > 3 | menu.getScan() < 1) {
