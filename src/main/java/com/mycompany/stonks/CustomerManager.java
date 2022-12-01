@@ -4,6 +4,7 @@ import java.util.Scanner;
 /**
  * this manages the customer object and directs the user to actions
  * @author Elijah
+ * @author Tye
  * @author Isaac
  */
 public class CustomerManager {
@@ -25,8 +26,9 @@ public class CustomerManager {
     public void displayCustomers() {
     System.out.println();
     for (int i = 0; i < customers.size(); i++) {
-      System.out.println("ID:        " + i);
-      customers.get(i).display();
+      System.out.println("ID:             " + i);
+      // customers.get(i).display();
+      System.out.println("Customer name:  " + customers.get(i).getName());
     }
   }
 
@@ -62,6 +64,7 @@ public class CustomerManager {
     displayCustomers();
     System.out.println("Enter the CustomerID You would like to edit");
     ind = in.nextInt();
+    customers.get(ind).display();
     System.out.println("Edit Customer Name? y/n");
     y = in.next().charAt(0);
     if (y == 'y') {
@@ -91,13 +94,25 @@ public class CustomerManager {
     int ind;
     double newMoneys;
     displayCustomers();
-    System.out.println("Enter the CustomerID You would like to update profits on");
+    System.out.println("Enter the CustomerID you would like to update profits on");
     ind = in.nextInt();
     System.out.println("How much money did they just spend?");
     newMoneys = in.nextDouble();
     System.out.println("Adding " + newMoneys + " to their total money spent with us");
     customers.get(ind).calculateProfit(newMoneys);
     System.out.println("Their new total is: " + customers.get(ind).getProfit());
+  }
+
+  /*
+   * get the receipt fot a specific customer
+   */
+  public void getReceipt() {
+    int ind;
+    displayCustomers();
+    System.out.println("Enter the CustomerID you would like to get a receipt for.");
+    ind = in.nextInt();
+    // complex receipt shit
+    customers.get(ind).display();
   }
 
     /**
@@ -108,7 +123,7 @@ public class CustomerManager {
     String input = "";
 
     while (!input.equals("back")) {
-      System.out.println("display, add, edit, update, back");
+      System.out.println("display, add, edit, update, receipt, back");
       input = in.next();
       if (input.equals("display")) {
         displayCustomers();
@@ -118,6 +133,8 @@ public class CustomerManager {
         editCustomer();
       } else if (input.equals("update")) {
         updateCustomer();
+      } else if (input.equals("receipt")) {
+        getReceipt();
       }
     }
   }
