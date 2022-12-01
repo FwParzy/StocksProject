@@ -1,3 +1,5 @@
+// fin
+
 import java.util.Scanner;
 
 /**
@@ -19,32 +21,31 @@ public class Main {
     CustomerManager customers = new CustomerManager();
     String answer = "";
 
+    System.out.println("\nHi, I am your Digital Inventory Virtual Assistant!");
+    System.out.println("You can call me Diva. Who are you?\n");
+
     // Calling the login class and logging in
     user.login();
 
-    System.out.println("\nWelcome to foo Inventory Management program");
+    System.out.println("\nHello, Admin. Welcome to The Foo Inventory Management Program!");
 
-    while (!answer.equals("quit")) {
+    while (!answer.equals("0")) {
       System.out.println("\nWhat would you like to manage?");
-      System.out.println("Inventory, Customers, Dispatch, Shift, quit");
+      System.out.println(" Your options are: ");
+      System.out.println("  1: Inventory \n  2: Customers \n  3: Dispatch \n  4: Shift \n  0: Quit");
       answer = in.next();
 
-      if (answer.equals("Inventory")) {
+      if (answer.equals("1")) {
         inventory.runInputCheck();
-
-      } else if (answer.equals("Customers")) {
+      } else if (answer.equals("2")) {
         customers.runInputCheck();
-
-      } else if (answer.equals("Dispatch")) {
+      } else if (answer.equals("3")) {
         DispatchTester.main(args);
-
-      } else if (answer.equals("Shift")) {
+      } else if (answer.equals("4")) {
         ShiftingTester.main(args);
-
-      } else {
-        System.out.println("something broke");
       }
     }
-    System.out.println("\nThanks for using foo Inventory Management");
+
+    System.out.println("\nThanks for using Foo Inventory Management");
   }
 }

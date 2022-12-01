@@ -29,29 +29,30 @@ public class CustomerManager {
       System.out.println("ID:             " + i);
       // customers.get(i).display();
       System.out.println("Customer name:  " + customers.get(i).getName());
+      System.out.println();
     }
   }
 
     /**
      * Add a customer to the ArrayList
      */
-    public void addCustomer() {
-    System.out.println("Please enter your customer info :");
+  public void addCustomer() {
+    System.out.println("\n Please enter your customer info: ");
 
-    System.out.print("Customer Name:                   ");
+    System.out.print("\n Customer Name:                   ");
     String name = in.next();
 
-    System.out.print("Stock Material:                  ");
+    System.out.print("\n Stock Material:                  ");
     String material = in.next();
 
-    System.out.print("Profit made off the customer:    ");
+    System.out.print("\n Profit made off the customer:    ");
     double profit = in.nextDouble();
 
     // Create user inputed customer
     customers.add(new Customer(name, material, profit));
     int last = customers.size() - 1;
 
-    System.out.println("You added this customer to our 'database'");
+    System.out.println("\n You added this customer to our database");
     customers.get(last).display();
   }
 
@@ -62,28 +63,28 @@ public class CustomerManager {
     char y;
     int ind;
     displayCustomers();
-    System.out.println("Enter the CustomerID You would like to edit");
+    System.out.println("\n Enter the CustomerID You would like to edit");
     ind = in.nextInt();
     customers.get(ind).display();
-    System.out.println("Edit Customer Name? y/n");
+    System.out.println("\n Edit Customer Name? y/n");
     y = in.next().charAt(0);
     if (y == 'y') {
       String name = in.next();
       customers.get(ind).setName(name);
     }
-    System.out.println("Edit Customer Material Bought? y/n");
+    System.out.println("\n Edit Customer Material Bought? y/n");
     y = in.next().charAt(0);
     if (y == 'y') {
       String material = in.next();
       customers.get(ind).setMaterial(material);
     }
-    System.out.println("Edit profits made off of the customer? y/n");
+    System.out.println("\n Edit profits made off of the customer? y/n");
     y = in.next().charAt(0);
     if (y == 'y') {
       double profit = in.nextDouble();
       customers.get(ind).setProfit(profit);
     }
-    System.out.println("Here are your changes");
+    System.out.println("\n Here are your changes:");
     customers.get(ind).display();
   }
 
@@ -94,13 +95,13 @@ public class CustomerManager {
     int ind;
     double newMoneys;
     displayCustomers();
-    System.out.println("Enter the CustomerID you would like to update profits on");
+    System.out.println("\n Enter the CustomerID you would like to update profits on");
     ind = in.nextInt();
-    System.out.println("How much money did they just spend?");
+    System.out.println("\n How much money did they just spend?");
     newMoneys = in.nextDouble();
-    System.out.println("Adding " + newMoneys + " to their total money spent with us");
+    System.out.println("\n Adding " + newMoneys + " to their total money spent with us");
     customers.get(ind).calculateProfit(newMoneys);
-    System.out.println("Their new total is: " + customers.get(ind).getProfit());
+    System.out.println("\n Their new total is: " + customers.get(ind).getProfit());
   }
 
   /*
@@ -118,22 +119,23 @@ public class CustomerManager {
     /**
      * This is where we direct the user to where they want to go
      */
-    public void runInputCheck() {
-    System.out.println("What would you like to do with your Customers?");
+  public void runInputCheck() {
+    System.out.println("\n What would you like to do with your Customers?");
     String input = "";
 
-    while (!input.equals("back")) {
-      System.out.println("display, add, edit, update, receipt, back");
+    while (!input.equals("0")) {
+      System.out.println(" 1: Display \n 2: Add \n 3: Edit \n 4: Update \n 5: Receipt \n 0: Back");
+
       input = in.next();
-      if (input.equals("display")) {
+      if (input.equals("1")) {
         displayCustomers();
-      } else if (input.equals("add")) {
+      } else if (input.equals("2")) {
         addCustomer();
-      } else if (input.equals("edit")) {
+      } else if (input.equals("3")) {
         editCustomer();
-      } else if (input.equals("update")) {
+      } else if (input.equals("4")) {
         updateCustomer();
-      } else if (input.equals("receipt")) {
+      } else if (input.equals("5")) {
         getReceipt();
       }
     }
